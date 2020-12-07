@@ -1,0 +1,33 @@
+{
+  "manifest_version": 2,
+  "name": "Test Extension",
+  "version": "0.0",
+  "offline_enabled": true,
+
+  "background": {
+    "persistent": false,
+    "scripts": ["background.js"]
+  },
+
+  "content_scripts": [{
+    "matches": ["*://*/*"],
+    "js": ["content.js"],
+    "run_at": "document_idle",
+    "all_frames": false
+  }],
+
+  "browser_action": {
+    "default_title": "Test Extension",
+    "default_popup": "popup.html"
+  },
+
+  "commands": {
+    "_execute_browser_action": {
+      "suggested_key": {
+        "default": "Ctrl+Shift+F",
+        "mac": "MacCtrl+Shift+F"
+      },
+      "description": "Opens popup.html"
+    }
+  }
+}
