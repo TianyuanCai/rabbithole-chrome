@@ -7,16 +7,12 @@ function openInNewTab(url) {
 const setDOMInfo = info => {
     for (let i = 0; i < info.textArr.length; i++) {
         var btn = document.createElement("button");
-        // var t = document.createTextNode(info.textArr[i]);
-        // btn.appendChild(t);
         btn.textContent = info.textArr[i];
         btn.addEventListener("click", function () {
             openInNewTab(info.linkArr[i].toString())
         });
         document.body.appendChild(btn);
     }
-    // document.getElementById('inputs').textContent = info.inputs;
-    // document.getElementById('buttons').textContent = info.buttons;
 };
 
 // Once the DOM is ready...
