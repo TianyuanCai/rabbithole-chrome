@@ -6,7 +6,7 @@ function openInNewTab(url) {
 // Update the relevant fields with the new data.
 const setDOMInfo = info => {
     for (let i = 0; i < info.textArr.length; i++) {
-        var btn = document.createElement("button");
+        let btn = document.createElement("button");
         btn.textContent = info.textArr[i];
         btn.addEventListener("click", function () {
             openInNewTab(info.linkArr[i].toString())

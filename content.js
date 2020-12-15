@@ -16,11 +16,10 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
         // (For your specific requirements `document.querySelectorAll(...)`
         //  should be equivalent to jquery's `$(...)`.)
 
-        var linkMatches = document.querySelectorAll('a:link:not([href^=javascript])');
-        var links = new Array(linkMatches.length);
-        var linkArr = new Array(linkMatches.length);
-        var textArr = new Array(linkMatches.length);
-        var buttonArray = new Array(linkMatches.length);
+        let linkMatches = document.querySelectorAll('a:link:not([href^=javascript])');
+        let links = new Array(linkMatches.length);
+        let linkArr = new Array(linkMatches.length);
+        let textArr = new Array(linkMatches.length);
 
         for (let i = 0; i < linkMatches.length; i++) {
             links[i] = {
@@ -35,10 +34,9 @@ chrome.runtime.onMessage.addListener((msg, sender, response) => {
             };
             linkArr[i] = linkMatches[i].href
             textArr[i] = linkMatches[i].text
-
         }
 
-        var domInfo = {
+        let domInfo = {
             textArr: textArr,
             linkArr: linkArr,
         };
